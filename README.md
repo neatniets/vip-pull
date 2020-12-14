@@ -1,5 +1,5 @@
 # vip-pull
-A bash script + C program that downloads "Chosen" music from the [Vidya Intarweb Playlist](https://www.vipvgm.net/), avoiding those already downloaded.
+A bash script + C program that downloads "Chosen" music from the [Vidya Intarweb Playlist](https://www.vipvgm.net/), ignoring those already downloaded.
 
 The script uses `curl` to download the JSON file from https://www.vipvgm.net/roster.min.json. This JSON, as far as I am aware, is the only location where you can find the IDs for the music. The IDs are not in the XML files referenced by the [credited source code](https://github.com/fpgaminer/vip-html5-player). The "Export" buttons on VIP give you a comma-separated list of these IDs, so it's necessary to know them.
 
