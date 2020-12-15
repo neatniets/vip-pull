@@ -309,12 +309,15 @@ static void *thrd_parse_export_str(void *args) {
         int bytes_read; // holds number of bytes read
         /* keep looping until no more ids to read */
         while (scan_ret = sscanf(argsv->export_str,
-                                 " %d,%n",
+                                 " %d%n",
                                  (argsv->ids) + argsv->num_ids,
                                  &bytes_read),
                scan_ret > 0) {
                 /* advance string past what was read */
                 argsv->export_str += bytes_read;
+                if (*argsv->export_str == ',') {
+                        argsv->export_str++;
+                }
                 argsv->num_ids++;
                 /* make space if needed */
                 if (argsv->num_ids >= max_ids) {
